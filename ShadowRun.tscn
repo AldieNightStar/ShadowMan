@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://LevelHolder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://LevelFloor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Floor.png" type="Texture" id=3]
 [ext_resource path="res://assets/Cactus.png" type="Texture" id=4]
+[ext_resource path="res://Obstacle1.tscn" type="PackedScene" id=5]
 
 [node name="ShadowRun" type="Node2D"]
+
+[node name="Obstacle1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 53.933, 38.3306 )
+
+[node name="Obstacle4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 168.623, 38.7275 )
+
+[node name="Obstacle2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 93.8053, 38.5402 )
+
+[node name="Obstacle3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 135.684, 38.529 )
 
 [node name="LevelHolder" parent="." instance=ExtResource( 1 )]
 
@@ -18,88 +31,148 @@
 [node name="Parallax" type="ParallaxLayer" parent="Canvas/BG"]
 position = Vector2( 0.186447, 45.8229 )
 motion_mirroring = Vector2( 100, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="Canvas/BG/Parallax"]
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite2" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 10, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite3" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 20, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite4" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 30, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite5" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 40, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite6" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 50, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite7" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 60, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite8" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 70, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite9" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 80, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite10" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 90, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite11" type="Sprite" parent="Canvas/BG/Parallax"]
 position = Vector2( 100, 0 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Parallax2" type="ParallaxLayer" parent="Canvas/BG"]
 modulate = Color( 1, 1, 1, 0.0666667 )
 position = Vector2( 4.77046, 45.4597 )
 motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 100, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cactus" type="Sprite" parent="Canvas/BG/Parallax2"]
 position = Vector2( 25, -6 )
 scale = Vector2( 1.70791, 1.87308 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cactus2" type="Sprite" parent="Canvas/BG/Parallax2"]
 position = Vector2( 50, -6 )
 scale = Vector2( 1.70791, 1.87308 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cactus3" type="Sprite" parent="Canvas/BG/Parallax2"]
 position = Vector2( 80, -7 )
 scale = Vector2( 1.708, 2 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Parallax3" type="ParallaxLayer" parent="Canvas/BG"]
 modulate = Color( 1, 1, 1, 0.0666667 )
 position = Vector2( 4.77046, 45.4597 )
 motion_scale = Vector2( 0.3, 1 )
 motion_mirroring = Vector2( 100, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cactus3" type="Sprite" parent="Canvas/BG/Parallax3"]
 position = Vector2( 25, -12 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cactus4" type="Sprite" parent="Canvas/BG/Parallax3"]
 position = Vector2( 60, -12 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cactus5" type="Sprite" parent="Canvas/BG/Parallax3"]
 position = Vector2( 90, -12 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}

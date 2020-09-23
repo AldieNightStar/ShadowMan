@@ -8,8 +8,11 @@ script/source = "extends KinematicBody2D
 var x_regions = [0, 10, 20, 10]
 var x_regions_pnt = 0
 
+var _previous_skipped_object : Node2D = null
+
 export var stopped = true
 export var speed = .5
+export var maxspeed = 3
 export var hp = 4
 
 var camera : Camera2D = null
@@ -25,6 +28,14 @@ func _ready():
 
 func _physics_process(delta):
 	var c = move_and_collide(Vector2(speed, 0))
+	# Collision
+	if c != null:
+		if c.collider.has_method(\"touch\"):
+			var skip = c.collider.touch(self)
+			if skip:
+				skip_collision(c.collider)
+		else:
+			skip_collision(c.collider)
 	# When player jumps or falls down
 	if yvel != 0:
 		move_and_collide(Vector2(0, yvel))
@@ -57,6 +68,8 @@ func use_camera(cam: Camera2D):
 
 func _tick():
 	speed += 0.01
+	if speed > maxspeed:
+		speed = maxspeed
 
 func _normalize_yvel():
 	yvel += 0.5
@@ -77,6 +90,12 @@ func damage(n):
 
 func die():
 	print(\"Oh no! Player died!\")
+
+func skip_collision(object):
+	if _previous_skipped_object != null:
+		remove_collision_exception_with(_previous_skipped_object)
+	add_collision_exception_with(object)
+	_previous_skipped_object = object
 "
 
 [sub_resource type="RectangleShape2D" id=2]
