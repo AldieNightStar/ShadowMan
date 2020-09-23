@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+func _ready():
+	$Player.use_camera($Camera)
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		G.emit_signal(\"control_jump\")
+"
+
+[node name="LevelHolder" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7.98341, 38.845 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 50.969, 24 )
