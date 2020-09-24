@@ -4,21 +4,9 @@
 [ext_resource path="res://LevelFloor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Floor.png" type="Texture" id=3]
 [ext_resource path="res://assets/Cactus.png" type="Texture" id=4]
-[ext_resource path="res://Obstacle1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/SoundTrack.ogg" type="AudioStream" id=5]
 
 [node name="ShadowRun" type="Node2D"]
-
-[node name="Obstacle1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 53.933, 38.3306 )
-
-[node name="Obstacle4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 168.623, 38.7275 )
-
-[node name="Obstacle2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 93.8053, 38.5402 )
-
-[node name="Obstacle3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 135.684, 38.529 )
 
 [node name="LevelHolder" parent="." instance=ExtResource( 1 )]
 
@@ -176,3 +164,7 @@ texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
